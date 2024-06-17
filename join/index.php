@@ -52,16 +52,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	}
 
 	// 画像のチェック
+	// $image = $_FILES['image'];
+	// if ($image['name'] !== '' && $image['error'] === 0) {
+	// 	$type = mime_content_type($image['tmp_name']);
+	// 	if ($type !== 'image/png' && $type !== 'image/jpeg') {
+	// 		$error['image'] = 'type';
+	// 	}
+	// }
+
+	// if (empty($error)) {
+	// 	$_SESSION['form'] = $form;
 	$image = $_FILES['image'];
 	if ($image['name'] !== '' && $image['error'] === 0) {
-		$type = mime_content_type($image['tmp_name']);
+		// 使用 getimagesize() 函数获取文件的 MIME 类型
+		$image_info = getimagesize($image['tmp_name']);
+		$type = $image_info['mime'];
+	
+		// 检查 MIME 类型是否为允许的图片类型
 		if ($type !== 'image/png' && $type !== 'image/jpeg') {
 			$error['image'] = 'type';
 		}
 	}
 
+	
 	if (empty($error)) {
+		// 如果没有错误，继续处理逻辑
 		$_SESSION['form'] = $form;
+
 
 		// 画像のアップロード
 		if ($image['name'] !== '') {
