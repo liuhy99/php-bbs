@@ -42,3 +42,10 @@ The following are the main files of the project
 
 
 ### :fireworks: show results
+<img src="images/results/bbs1.png" width="80%" height="500">
+<img src="images/results/bbs2.png" width="80%" height="500">
+<img src="images/results/bbs3.png" width="80%" height="500">
+<img src="images/results/bbs4.png" width="80%" height="500">
+<img src="images/results/bbs5.png" width="80%" height="500">
+<img src="images/results/bbs6.png" width="80%" height="500">
+<img src="images/results/bbs7.png" width="80%" height="500">
